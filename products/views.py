@@ -29,27 +29,12 @@ def product_list(request):
 
     total_results = products.count()
 
-<<<<<<< HEAD
-    paginator = Paginator(products, 5)  # 5 per page
-    page_number = request.GET.get('page')
-    products_page = paginator.get_page(page_number)
-
     return render(request, 'products/product_list.html', {
-        'products': products_page,
-        'query': query,
-        'min_price': min_price,
-        'max_price': max_price,
-        'availability': availability,
-        'total_results': total_results,
-    })
-=======
-   return render(request, 'products/product_list.html', {
     'products': products,
     'query': query,
     'min_price': min_price,
     'max_price': max_price,
     'availability': availability,
     'total_results': total_results,
-})
+    })
 
->>>>>>> 738d4f2c44882a894aa1ef07b6537800bb075b89
