@@ -43,13 +43,6 @@ def product_list(request):
         'total_results': total_results,
     })
 
-   return render(request, 'products/product_list.html', {
-    'products': products,
-    'query': query,
-    'min_price': min_price,
-    'max_price': max_price,
-    'availability': availability,
-    'total_results': total_results,
-})
+   
 
 
