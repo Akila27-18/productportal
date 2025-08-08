@@ -29,6 +29,7 @@ def product_list(request):
 
     total_results = products.count()
 
+<<<<<<< HEAD
     return render(request, 'products/product_list.html', {
     'products': products,
     'query': query,
@@ -38,3 +39,22 @@ def product_list(request):
     'total_results': total_results,
     })
 
+=======
+
+    paginator = Paginator(products, 5)  # 5 per page
+    page_number = request.GET.get('page')
+    products_page = paginator.get_page(page_number)
+
+    return render(request, 'products/product_list.html', {
+        'products': products_page,
+        'query': query,
+        'min_price': min_price,
+        'max_price': max_price,
+        'availability': availability,
+        'total_results': total_results,
+    })
+
+   
+
+
+>>>>>>> d65b58b24b45e4f0057917f4e161bea3875e673c
