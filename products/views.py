@@ -27,11 +27,12 @@ def product_list(request):
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
 
-    return render(request, 'products/product_list.html', {{
-        'page_obj': page_obj,
-        'query': query,
-        'min_price': min_price,
-        'max_price': max_price,
-        'available': available,
-        'total_results': total_results,
-    }})
+   return render(request, 'products/product_list.html', {
+    'products': products,
+    'query': query,
+    'min_price': min_price,
+    'max_price': max_price,
+    'availability': availability,
+    'total_results': total_results,
+})
+
